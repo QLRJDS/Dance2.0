@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBright"
+    android:padding="5dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+    <ImageView
+        android:id="@+id/vedio_img"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        />
+
+    <TextView
+        android:id="@+id/vedio_name"
+        android:padding="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        />
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <VideoView
+        android:layout_width="match_parent"
+        android:layout_height="235dp"
+        android:id="@+id/videoView"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="视频名称"
+            android:id="@+id/vedio_name"
+            android:textSize="25dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="视频标签/分类"
+            android:textSize="14dp"
+            android:paddingLeft="20dp"
+            android:id="@+id/vedio_type"/>
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:gravity="right"
+        >
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/collect"
+
+            android:background="@mipmap/collect1"/>
+
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/download"
+            android:layout_marginLeft="40dp"
+            android:background="@mipmap/download"/>
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/like"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:background="@mipmap/like"/>
+    </LinearLayout>
+
+
+</LinearLayout>

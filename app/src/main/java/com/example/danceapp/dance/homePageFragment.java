@@ -2,7 +2,6 @@ package com.example.danceapp.dance;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,11 +18,9 @@ import android.widget.Toast;
 public class homePageFragment extends Fragment implements View.OnClickListener{
 
     private RelativeLayout tuijian,jianshencao,minzuwu,jiewu,xiandaiwu;
-    //private ViewPager vptuijian,vpjianshencao,vpminzuwu,vpjiewu,vpxiandaiwu;
-    private ImageView vptuijian;
+    private ImageView vptuijian,vpjianshencao,vpminzuwu,vpjiewu,vpxiandaiwu;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.homepage, container, false);
-
 
         tuijian=(RelativeLayout)view.findViewById(R.id.tuijian);
         tuijian.setOnClickListener(this);
@@ -38,6 +35,14 @@ public class homePageFragment extends Fragment implements View.OnClickListener{
 
         vptuijian=(ImageView)view.findViewById(R.id.vptuijian);
         vptuijian.setOnClickListener(this);
+        vpjianshencao=(ImageView)view.findViewById(R.id.vpjianshencao);
+        vpjianshencao.setOnClickListener(this);
+        vpminzuwu=(ImageView)view.findViewById(R.id.vpminzuwu);
+        vpminzuwu.setOnClickListener(this);
+        vpjiewu=(ImageView)view.findViewById(R.id.vpjiewu);
+        vpjiewu.setOnClickListener(this);
+        vpxiandaiwu=(ImageView)view.findViewById(R.id.vpxiandaiwu);
+        vpxiandaiwu.setOnClickListener(this);
 
         return view;
     }
@@ -46,13 +51,46 @@ public class homePageFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tuijian://调用回调函数，进行数据处理
-                VedioListCallback list_callback = (VedioListCallback) getActivity();
-                list_callback.getVedioList("test");
+                VedioListCallback tuijian_list = (VedioListCallback) getActivity();
+                tuijian_list.getVedioList("tuijian");
                 break;
+            case R.id.jianshencao://调用回调函数，进行数据处理
+                VedioListCallback jianshencao_list = (VedioListCallback) getActivity();
+                jianshencao_list.getVedioList("jianshencao");
+                break;
+            case R.id.minzuwu://调用回调函数，进行数据处理
+                VedioListCallback minzuwu_list = (VedioListCallback) getActivity();
+                minzuwu_list.getVedioList("minzuwu");
+                break;
+            case R.id.jiewu://调用回调函数，进行数据处理
+                VedioListCallback jiewu_list = (VedioListCallback) getActivity();
+                jiewu_list.getVedioList("jiewu");
+                break;
+            case R.id.xiandaiwu://调用回调函数，进行数据处理
+                VedioListCallback xiandaiwu_list = (VedioListCallback) getActivity();
+                xiandaiwu_list.getVedioList("xiandaiwu");
+                break;
+
+
             case R.id.vptuijian:
-                Log.i("hahahha", "onClick: ");
-                VedioCallback callback=(VedioCallback) getActivity();
-                callback.getVedio("test");
+                VedioCallback callback1=(VedioCallback) getActivity();
+                callback1.getVedio("test");
+                break;
+            case R.id.vpjianshencao:
+                VedioCallback callback2=(VedioCallback) getActivity();
+                callback2.getVedio("test");
+                break;
+            case R.id.vpminzuwu:
+                VedioCallback callback3=(VedioCallback) getActivity();
+                callback3.getVedio("test");
+                break;
+            case R.id.vpjiewu:
+                VedioCallback callback4=(VedioCallback) getActivity();
+                callback4.getVedio("test");
+                break;
+            case R.id.vpxiandaiwu:
+                VedioCallback callback5=(VedioCallback) getActivity();
+                callback5.getVedio("test");
                 break;
 
         }

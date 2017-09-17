@@ -14,7 +14,7 @@ import android.widget.Toast;
  * 音乐播放页面  音乐进度的控制
  */
 public class MusicActivity extends Activity implements View.OnClickListener{
-    private Button back_to_room,search;
+    private Button back_to_room;
     private ChangeButton music_control_btn;//音乐播放暂停按钮;
     private SeekBar seekbar;
     private RelativeLayout music_list_bar;

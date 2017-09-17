@@ -9,19 +9,23 @@
     android:gravity="center"
     android:orientation="vertical"
     >
-
+    <!--视频列表中的listview-->
     <ImageView
         android:id="@+id/vedio_img"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         />
-
     <TextView
         android:id="@+id/vedio_name"
         android:padding="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         />
+    <!-- 分割线-->
+    <View
+        android:id="@+id/va1"
+        android:layout_width="match_parent"
+        android:layout_height="10px"
+        android:background="@color/colorWhite" />
 
 </LinearLayout>

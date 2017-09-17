@@ -26,11 +26,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/tuijian"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/text"
                     android:textSize="16dp"
                     />
-                <Button
-                    android:id="@+id/button1"
+                <ImageView
+                    android:id="@+id/iv1"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_alignParentRight="true"
@@ -38,38 +38,12 @@
                     />
             </RelativeLayout>
 
-            <!-- 用于滑动显示几张图片，点击后播放视频 -->
+            <!-- 用于显示图片，点击后播放视频 -->
             <ImageView
                 android:id="@+id/vptuijian"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:background="@mipmap/p2"/>
-            <!-- 用于显示是否选中的点，目前有三个，可根据需要增加 -->
-            <LinearLayout
-                android:id="@+id/dotLayout1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:gravity="right|bottom"
-                android:orientation="horizontal">
-                <View
-                    android:id="@+id/v_dota"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:layout_marginLeft="5dp"
-                    android:background="@mipmap/dot" />
-                <View
-                    android:id="@+id/v_dota1"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:background="@mipmap/dot_line" />
-                <View
-                    android:id="@+id/v_dota2"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:background="@mipmap/dot_line" />
-
-            </LinearLayout>
         </LinearLayout>
 
         <!-- 分割线-->
@@ -95,10 +69,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/jianshencao"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/text"
                     android:textSize="16dp" />
-                <Button
-                    android:id="@+id/button2"
+                <ImageView
+                    android:id="@+id/iv2"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_alignParentRight="true"
@@ -107,36 +81,12 @@
             </RelativeLayout>
 
 
-            <android.support.v4.view.ViewPager
+            <ImageView
                 android:id="@+id/vpjianshencao"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:background="@mipmap/p1"/>
-            <LinearLayout
-                android:id="@+id/dotLayout2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:gravity="right|bottom"
-                android:orientation="horizontal"
-                android:background="@color/colorBright">
-                <View
-                    android:id="@+id/v_dotb"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:layout_marginLeft="5dp"
-                    android:background="@mipmap/dot" />
-                <View
-                    android:id="@+id/v_dotb1"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:background="@mipmap/dot_line" />
-                <View
-                    android:id="@+id/v_dotb2"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:background="@mipmap/dot_line" />
-            </LinearLayout>
+
         </LinearLayout>
         <!-- 分割线-->
         <View
@@ -160,46 +110,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/minzuwu"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/text"
                     android:textSize="16dp" />
-                <Button
-                    android:id="@+id/button3"
+                <ImageView
+                    android:id="@+id/iv3"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_alignParentRight="true"
                     android:background="@mipmap/enter"
                     />
             </RelativeLayout>
-            <android.support.v4.view.ViewPager
+            <ImageView
                 android:id="@+id/vpminzuwu"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:background="@mipmap/p2"/>
-            <LinearLayout
-                android:id="@+id/dotLayout3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:gravity="right|bottom"
-                android:orientation="horizontal"
-                android:background="@color/colorBright">
-                <View
-                    android:id="@+id/v_dotc"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:layout_marginLeft="5dp"
-                    android:background="@mipmap/dot" />
-                <View
-                    android:id="@+id/v_dotc1"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:background="@mipmap/dot_line" />
-                <View
-                    android:id="@+id/v_dotc2"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:background="@mipmap/dot_line" />
-            </LinearLayout>
+
         </LinearLayout>
 
         <!-- 分割线-->
@@ -225,46 +151,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/jiewu"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/text"
                     android:textSize="16dp" />
-                <Button
-                    android:id="@+id/button4"
+                <ImageView
+                    android:id="@+id/iv4"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_alignParentRight="true"
                     android:background="@mipmap/enter"
                     />
             </RelativeLayout>
-            <android.support.v4.view.ViewPager
+            <ImageView
                 android:id="@+id/vpjiewu"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:background="@mipmap/p1"/>
-            <LinearLayout
-                android:id="@+id/dotLayout4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:gravity="right|bottom"
-                android:orientation="horizontal"
-                android:background="@color/colorBright">
-                <View
-                    android:id="@+id/v_dotd"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:layout_marginLeft="5dp"
-                    android:background="@mipmap/dot" />
-                <View
-                    android:id="@+id/v_dotd1"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:background="@mipmap/dot_line" />
-                <View
-                    android:id="@+id/v_dotd2"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:background="@mipmap/dot_line" />
-            </LinearLayout>
+
         </LinearLayout>
         <!-- 分割线-->
         <View
@@ -288,46 +190,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/xiandaiwu"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/text"
                     android:textSize="16dp" />
-                <Button
-                    android:id="@+id/button5"
+                <ImageView
+                    android:id="@+id/iv5"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_alignParentRight="true"
                     android:background="@mipmap/enter"
                     />
             </RelativeLayout>
-            <android.support.v4.view.ViewPager
+            <ImageView
                 android:id="@+id/vpxiandaiwu"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:background="@mipmap/p2"/>
-            <LinearLayout
-                android:id="@+id/dotLayout5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:gravity="right|bottom"
-                android:orientation="horizontal"
-                android:background="@color/colorBright">
-                <View
-                    android:id="@+id/v_dote"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:layout_marginLeft="5dp"
-                    android:background="@mipmap/dot" />
-                <View
-                    android:id="@+id/v_dote1"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:background="@mipmap/dot_line" />
-                <View
-                    android:id="@+id/v_dote2"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:background="@mipmap/dot_line" />
-            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

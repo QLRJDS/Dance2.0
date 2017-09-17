@@ -84,21 +84,22 @@ public class MainActivity extends AppCompatActivity implements
         startActivity(intent);
     }
 
-    @Override
+    //实现DataCallBack接口，对视屏列表的数据进行处理。
     public void getVedioList(String data) {
         //此处为数据处理
+
+
 
         //跳转到视频列表activity
         Intent intent=new Intent(MainActivity.this, VedioListActivity.class);
         startActivity(intent);
     }
-
+    //实现DataCallBack接口，对需要观看的视频数据进行处理。
     public void getVedio(String data) {
         //此处为数据处理
 
         //跳转到视频播放activity
-        Toast.makeText(getApplicationContext(), "你点了",
-                Toast.LENGTH_SHORT).show();
+
         Intent intent=new Intent(MainActivity.this, vedioActivity.class);
         startActivity(intent);
     }

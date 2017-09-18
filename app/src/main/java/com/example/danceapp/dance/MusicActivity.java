@@ -68,8 +68,6 @@ public class MusicActivity extends Activity implements View.OnClickListener{
                 finish();
                 break;
             case R.id.music_list_bar://点击播放列表跳转到播放列表页面
-                Toast.makeText(getApplicationContext(), "你点了",
-                        Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MusicActivity.this, MusicListActivity.class);
                 MusicActivity.this.startActivity(intent);
                 break;

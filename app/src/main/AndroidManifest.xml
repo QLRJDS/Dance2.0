@@ -32,6 +32,21 @@
         <activity
             android:name=".VedioListActivity">
         </activity>
+        <activity
+            android:name=".LogActivity">
+        </activity>
+        <activity
+            android:name=".CollectionActivity">
+        </activity>
+        <activity
+            android:name=".HistoryActivity">
+        </activity>
+        <activity
+            android:name=".RegisterActivity">
+        </activity>
+        <activity
+            android:name=".SettingActivity">
+        </activity>
     </application>
 
 </manifest>

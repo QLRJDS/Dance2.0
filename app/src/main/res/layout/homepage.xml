@@ -38,12 +38,24 @@
                     />
             </RelativeLayout>
 
-            <!-- 用于显示图片，点击后播放视频 -->
+            <!-- 点击图片播放视频 -->
             <ImageView
                 android:id="@+id/vptuijian"
                 android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
                 android:layout_height="180dp"
                 android:background="@mipmap/p2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="视频1的名字"
+                android:layout_below="@+id/iv1"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/text"
+                android:textSize="14dp"
+                />
         </LinearLayout>
 
         <!-- 分割线-->
@@ -83,9 +95,20 @@
 
             <ImageView
                 android:id="@+id/vpjianshencao"
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:background="@mipmap/p1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="视频2的名字"
+                android:layout_below="@+id/iv2"
+                android:textColor="@color/text"
+                android:textSize="14dp"
+                />
 
         </LinearLayout>
         <!-- 分割线-->
@@ -124,7 +147,18 @@
                 android:id="@+id/vpminzuwu"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
+                android:layout_marginTop="5dp"
                 android:background="@mipmap/p2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="视频3的名字"
+                android:layout_below="@+id/iv1"
+                android:textColor="@color/text"
+                android:textSize="14dp"
+                />
 
         </LinearLayout>
 
@@ -165,7 +199,19 @@
                 android:id="@+id/vpjiewu"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
+                android:layout_marginTop="5dp"
                 android:background="@mipmap/p1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="视频4的名字"
+                android:layout_below="@+id/iv1"
+                android:textColor="@color/text"
+                android:textSize="14dp"
+                />
 
         </LinearLayout>
         <!-- 分割线-->
@@ -204,7 +250,18 @@
                 android:id="@+id/vpxiandaiwu"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
+                android:layout_marginTop="5dp"
                 android:background="@mipmap/p2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="视频5的名字"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/iv1"
+                android:textColor="@color/text"
+                android:textSize="14dp"
+                />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

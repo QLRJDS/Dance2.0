@@ -25,7 +25,7 @@ android:layout_height="match_parent">
         android:text="@string/log"
         android:textSize="15dp"
         android:textColor="@color/colorWhite"
-        android:id="@+id/button"
+        android:id="@+id/logbt"
         android:background="@drawable/log_button"/>
 
 </RelativeLayout>
@@ -61,13 +61,6 @@ android:layout_height="match_parent">
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@mipmap/collect"/>
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@mipmap/enter"/>
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/history_bar"
@@ -93,13 +86,6 @@ android:layout_height="match_parent">
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@mipmap/history"/>
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@mipmap/enter"/>
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/cache_bar"
@@ -125,13 +111,6 @@ android:layout_height="match_parent">
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@mipmap/cache"/>
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@mipmap/enter"/>
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/set_bar"
@@ -157,14 +136,6 @@ android:layout_height="match_parent">
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@mipmap/setup"/>
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@mipmap/enter"/>
     </RelativeLayout>
-
 </LinearLayout>
 </LinearLayout>

@@ -39,8 +39,6 @@ public class roomFragment extends Fragment {
         view.findViewById(R.id.newroom).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //createroomFragment cr=new createroomFragment();
-                //cr.show(getFragmentManager(),"createroomDialog");
                 Intent intent=new Intent(getActivity(), roomActivity.class);
                 startActivity(intent);
             }
@@ -50,8 +48,6 @@ public class roomFragment extends Fragment {
         view.findViewById(R.id.enterroom).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //new MyDialogFragment()
-                //      .show(getFragmentManager(), "MyDialogFragment");
                 Intent intent=new Intent(getActivity(), roomActivity.class);
                 startActivity(intent);
             }

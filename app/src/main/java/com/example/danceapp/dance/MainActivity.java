@@ -11,7 +11,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements
-        RadioGroup.OnCheckedChangeListener,createroomFragment.DataCallback,
+        RadioGroup.OnCheckedChangeListener,
         homePageFragment.VedioListCallback,homePageFragment.VedioCallback{
 
     private RadioGroup rg_tab_bar;

@@ -33,9 +33,6 @@ public class VedioListActivity extends Activity{
         Toast.makeText(getApplicationContext(), "set了",
                 Toast.LENGTH_SHORT).show();
 
-        //ListView vedio_list=(ListView)findViewById(R.id.vedio_list);
-        //vedio_list.setAdapter(mAdapter);
-
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){

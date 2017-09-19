@@ -23,12 +23,12 @@ import java.util.List;
 //音乐播放，聊天
 public class roomActivity extends Activity
         implements View.OnClickListener {
-    private ImageView music_img;
-    private TextView music_name;
+
+    private TextView music_name;//音乐名称
     private RelativeLayout music_bar;
     private ChangeButton music_control_btn;//音乐播放暂停按钮
     //聊天
-    private Button BtnSend;
+    private Button BtnSend,last,next;//发送，上一首、下一首
     private EditText InputBox;
     private List<ChatMessage> mData;
     private ChatAdapter mAdapter;
@@ -84,13 +84,18 @@ public class roomActivity extends Activity
     }
 
     private void initView(){
+
         music_bar=(RelativeLayout)findViewById(R.id.music_bar);
         music_bar.setOnClickListener(this);
 
         music_control_btn = (ChangeButton) findViewById(R.id.music_control_btn);
         music_control_btn.setOnClickListener(this) ;
 
+        last =(Button)findViewById(R.id.last);
+        last.setOnClickListener(this) ;
 
+        next = (Button) findViewById(R.id.next);
+        next.setOnClickListener(this) ;
     }
 
     @Override
@@ -103,11 +108,21 @@ public class roomActivity extends Activity
             case R.id.music_control_btn://点击开始暂停控制音乐播放
                 music_control_btn.setIsStart(!music_control_btn.isStart());
                 if(music_control_btn.isStart())
-                    Toast.makeText(getApplicationContext(), "开始播放",
+                    Toast.makeText(getApplicationContext(), "开始播放",//测试数据
                             Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(getApplicationContext(), "暂停播放",
                             Toast.LENGTH_SHORT).show();
+            case R.id.last:
+                //上一首
+                Toast.makeText(getApplicationContext(), "上一首",//测试数据
+                        Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.next:
+                //下一首
+                Toast.makeText(getApplicationContext(), "下一首",//测试数据
+                        Toast.LENGTH_SHORT).show();
+                break;
         }
     }
     //测试数据

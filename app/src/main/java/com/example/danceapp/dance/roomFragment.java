@@ -11,7 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 //房间
 /**
@@ -19,9 +22,18 @@ import android.widget.Toast;
  */
 public class roomFragment extends Fragment {
 
+    RadioGroup num;
+    RadioButton num1;
+    Button add,decrease;
+    //EditText time;
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.room, container, false);
+        //time=(EditText)view.findViewById(R.id.time);
+        num= (RadioGroup)view.findViewById(R.id.num);
+        //获取第一个单选按钮，并设置其为选中状态
+        num1 = (RadioButton)view.findViewById(R.id.num1);
+        num1.setChecked(true);
 
         //点击创建房间按钮
         view.findViewById(R.id.newroom).setOnClickListener(new View.OnClickListener() {

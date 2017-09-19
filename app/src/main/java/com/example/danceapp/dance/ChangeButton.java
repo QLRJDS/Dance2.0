@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 /**
- * Created by Jinya LIANG on 2017/8/9.
+ * 音乐播放暂停按钮
  */
 public class ChangeButton extends LinearLayout {
 

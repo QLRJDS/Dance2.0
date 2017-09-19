@@ -117,7 +117,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:ems="10"
             android:textColor="@color/colorPrimaryDark"
             android:inputType="text" >
 
@@ -129,7 +128,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="发送"
-            android:background="@drawable/bar"
+            android:background="@drawable/confirm_bt"
             android:textColor="@color/colorPrimaryDark"/>
 
     </LinearLayout>

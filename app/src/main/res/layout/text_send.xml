@@ -21,7 +21,7 @@
         android:layout_marginRight="1dp"
         android:layout_toLeftOf="@+id/Header"
         android:layout_alignTop="@+id/Header"
-        android:background="@drawable/chat_bg_right"
+        android:background="@drawable/chat_right"
         android:contentDescription="Description"
         android:textIsSelectable="false"
         android:gravity="center" />

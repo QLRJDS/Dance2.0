@@ -41,7 +41,6 @@ public class createroomFragment extends DialogFragment {
             }
         });
         return view;
-
     }
     public void onResume() {
         //设置DialogFragment的大小

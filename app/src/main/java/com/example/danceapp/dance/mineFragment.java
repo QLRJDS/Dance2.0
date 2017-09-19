@@ -16,6 +16,15 @@ public class mineFragment extends Fragment {
 
         View view= inflater.inflate(R.layout.mine, container, false);
 
+        //为头像设置监听
+        view.findViewById(R.id.head).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), HeadActivity.class);
+                startActivity(intent);
+            }
+        });
+
         //为注册登陆按钮设置监听,进入登陆页面
         view.findViewById(R.id.logbt).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +42,14 @@ public class mineFragment extends Fragment {
             }
         });
         //为历史纪录设置监听,进入历史纪录页面
+        view.findViewById(R.id.cache_bar).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), HistoryActivity.class);
+                startActivity(intent);
+            }
+        });
+        //为本地缓存设置监听,进入本地缓存页面
         view.findViewById(R.id.history_bar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,7 +58,7 @@ public class mineFragment extends Fragment {
             }
         });
         //进入设置页面
-        view.findViewById(R.id.history_bar).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.set_bar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getActivity(), SettingActivity.class);

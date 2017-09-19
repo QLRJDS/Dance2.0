@@ -47,6 +47,9 @@
         <activity
             android:name=".SettingActivity">
         </activity>
+        <activity
+            android:name=".HeadActivity">
+        </activity>
     </application>
 
 </manifest>

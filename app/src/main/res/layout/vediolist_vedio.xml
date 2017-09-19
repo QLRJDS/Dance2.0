@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ll2"
+    android:id="@+id/vedio_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorBright"
     android:padding="5dp"
+    android:descendantFocusability="blocksDescendants"
     android:gravity="center"
     android:orientation="vertical"
+    android:clickable="true"
     >
     <!--视频列表中的listview-->
     <ImageView

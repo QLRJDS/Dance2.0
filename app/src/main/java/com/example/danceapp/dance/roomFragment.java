@@ -23,22 +23,25 @@ public class roomFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.room, container, false);
 
-        //点击创建房间按钮后，弹出框
+        //点击创建房间按钮
         view.findViewById(R.id.newroom).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createroomFragment cr=new createroomFragment();
-                cr.show(getFragmentManager(),"createroomDialog");
-
+                //createroomFragment cr=new createroomFragment();
+                //cr.show(getFragmentManager(),"createroomDialog");
+                Intent intent=new Intent(getActivity(), roomActivity.class);
+                startActivity(intent);
             }
         });
 
-        //点击加入房间按钮后，弹出框
+        //点击加入房间按钮
         view.findViewById(R.id.enterroom).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new MyDialogFragment()
-                        .show(getFragmentManager(), "MyDialogFragment");
+                //new MyDialogFragment()
+                //      .show(getFragmentManager(), "MyDialogFragment");
+                Intent intent=new Intent(getActivity(), roomActivity.class);
+                startActivity(intent);
             }
         });
         return view;

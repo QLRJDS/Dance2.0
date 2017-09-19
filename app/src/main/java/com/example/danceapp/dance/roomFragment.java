@@ -39,8 +39,11 @@ public class roomFragment extends Fragment {
         view.findViewById(R.id.newroom).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), roomActivity.class);
-                startActivity(intent);
+                boolean enter=true;//判断是否进入
+                if(enter) {
+                    Intent intent = new Intent(getActivity(), roomActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -48,8 +51,11 @@ public class roomFragment extends Fragment {
         view.findViewById(R.id.enterroom).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), roomActivity.class);
-                startActivity(intent);
+                boolean enter=true;//判断是否进入
+                if(enter) {
+                    Intent intent = new Intent(getActivity(), roomActivity.class);
+                    startActivity(intent);
+                }
             }
         });
         return view;

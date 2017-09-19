@@ -7,6 +7,7 @@
         android:id="@+id/vedio_title"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:background="@color/colorPrimary"
         android:padding="5dp">
         <!--<Button
             android:id="@+id/back_to_home"
@@ -32,11 +33,6 @@
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true" />-->
     </RelativeLayout>
-    <View
-        android:id="@+id/va1"
-        android:layout_width="match_parent"
-        android:layout_height="5px"
-        android:background="@color/colorPrimaryDark" />
 
     <!--动态加载的视频列表-->
     <ListView

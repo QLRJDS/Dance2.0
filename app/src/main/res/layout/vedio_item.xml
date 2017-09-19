@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:weightSum="1">
     <!--播放视频的页面-->
+
     <VideoView
         android:layout_width="match_parent"
         android:layout_height="235dp"
@@ -42,9 +43,7 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:id="@+id/collect"
-
             android:background="@mipmap/collect1"/>
-
         <ImageButton
             android:layout_width="25dp"
             android:layout_height="25dp"

@@ -9,6 +9,7 @@
         android:id="@+id/music_list"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:background="@color/colorPrimary"
         android:padding="10dp">
         <Button
             android:id="@+id/back_to_room"
@@ -22,6 +23,7 @@
             android:layout_width="wrap_content"
             android:text="音乐"
             android:textSize="18dp"
+            android:textColor="@color/colorWhite"
             android:layout_centerInParent="true"
             android:id="@+id/textView" />
         <Button
@@ -32,19 +34,13 @@
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true" />
     </RelativeLayout>
-    <!--分割线-->
-    <View
-        android:id="@+id/va1"
-        android:layout_width="match_parent"
-        android:layout_height="10px"
-        android:background="@color/colorPrimaryDark" />
     <!--播放列表-->
     <RelativeLayout
         android:id="@+id/music_list_bar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="5dp"
-        android:background="@color/colorBright"
+        android:background="@color/colorWhite"
         android:padding="10dp">
 
         <TextView

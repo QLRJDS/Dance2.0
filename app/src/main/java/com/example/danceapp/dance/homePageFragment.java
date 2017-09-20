@@ -1,6 +1,7 @@
 package com.example.danceapp.dance;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,9 +20,12 @@ public class homePageFragment extends Fragment implements View.OnClickListener{
 
     private RelativeLayout tuijian,jianshencao,minzuwu,jiewu,xiandaiwu;
     private ImageView vptuijian,vpjianshencao,vpminzuwu,vpjiewu,vpxiandaiwu;
+    Intent intent;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.homepage, container, false);
 
+        //跳转到视频列表
         tuijian=(RelativeLayout)view.findViewById(R.id.tuijian);
         tuijian.setOnClickListener(this);
         jianshencao=(RelativeLayout)view.findViewById(R.id.jianshencao);
@@ -33,6 +37,7 @@ public class homePageFragment extends Fragment implements View.OnClickListener{
         xiandaiwu=(RelativeLayout)view.findViewById(R.id.xiandaiwu);
         xiandaiwu.setOnClickListener(this);
 
+        //跳转到视频播放
         vptuijian=(ImageView)view.findViewById(R.id.vptuijian);
         vptuijian.setOnClickListener(this);
         vpjianshencao=(ImageView)view.findViewById(R.id.vpjianshencao);
@@ -50,47 +55,70 @@ public class homePageFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.tuijian://调用回调函数，进行数据处理
-                VedioListCallback tuijian_list = (VedioListCallback) getActivity();
-                tuijian_list.getVedioList("tuijian");
+            //这个是跳转到视频列表
+            case R.id.tuijian:
+                intent = new Intent(getActivity(), VedioListActivity.class);
+                intent.putExtra("title", "推荐视频");
+                startActivity(intent);
                 break;
-            case R.id.jianshencao://调用回调函数，进行数据处理
-                VedioListCallback jianshencao_list = (VedioListCallback) getActivity();
-                jianshencao_list.getVedioList("jianshencao");
+            case R.id.jianshencao:
+                intent = new Intent(getActivity(), VedioListActivity.class);
+                intent.putExtra("title", "健身操");
+                startActivity(intent);
                 break;
-            case R.id.minzuwu://调用回调函数，进行数据处理
-                VedioListCallback minzuwu_list = (VedioListCallback) getActivity();
-                minzuwu_list.getVedioList("minzuwu");
+            case R.id.minzuwu:
+                intent = new Intent(getActivity(), VedioListActivity.class);
+                intent.putExtra("title", "民族舞");
+                startActivity(intent);
                 break;
-            case R.id.jiewu://调用回调函数，进行数据处理
-                VedioListCallback jiewu_list = (VedioListCallback) getActivity();
-                jiewu_list.getVedioList("jiewu");
+            case R.id.jiewu:
+                intent = new Intent(getActivity(), VedioListActivity.class);
+                intent.putExtra("title", "街舞");
+                startActivity(intent);
                 break;
-            case R.id.xiandaiwu://调用回调函数，进行数据处理
-                VedioListCallback xiandaiwu_list = (VedioListCallback) getActivity();
-                xiandaiwu_list.getVedioList("xiandaiwu");
+            case R.id.xiandaiwu:
+                intent = new Intent(getActivity(), VedioListActivity.class);
+                intent.putExtra("title", "现代舞");
+                startActivity(intent);
                 break;
 
 
+            //这些是跳转到视频播放,传的数据写在这里
+            //!!!!!!!!!!!!!!!!
             case R.id.vptuijian:
-                VedioCallback callback1=(VedioCallback) getActivity();
-                callback1.getVedio("test");
+                intent = new Intent(getActivity(), vedioActivity.class);
+                intent.putExtra("vedio_url", "");
+                intent.putExtra("vedio_name","视频名称");
+                intent.putExtra("vedio_class","视频分类");
+                startActivity(intent);
                 break;
             case R.id.vpjianshencao:
-                VedioCallback callback2=(VedioCallback) getActivity();
-                callback2.getVedio("test");
+                intent = new Intent(getActivity(), vedioActivity.class);
+                intent.putExtra("vedio_url", "");
+                intent.putExtra("vedio_name","视频名称");
+                intent.putExtra("vedio_class","视频分类");
+                startActivity(intent);
                 break;
             case R.id.vpminzuwu:
-                VedioCallback callback3=(VedioCallback) getActivity();
-                callback3.getVedio("test");
+                intent = new Intent(getActivity(), vedioActivity.class);
+                intent.putExtra("vedio_url", "");
+                intent.putExtra("vedio_name","视频名称");
+                intent.putExtra("vedio_class","视频分类");
+                startActivity(intent);
                 break;
             case R.id.vpjiewu:
-                VedioCallback callback4=(VedioCallback) getActivity();
-                callback4.getVedio("test");
+                intent = new Intent(getActivity(), vedioActivity.class);
+                intent.putExtra("vedio_url", "");
+                intent.putExtra("vedio_name","视频名称");
+                intent.putExtra("vedio_class","视频分类");
+                startActivity(intent);
                 break;
             case R.id.vpxiandaiwu:
-                VedioCallback callback5=(VedioCallback) getActivity();
-                callback5.getVedio("test");
+                intent = new Intent(getActivity(), vedioActivity.class);
+                intent.putExtra("vedio_url", "");
+                intent.putExtra("vedio_name","视频名称");
+                intent.putExtra("vedio_class","视频分类");
+                startActivity(intent);
                 break;
 
         }

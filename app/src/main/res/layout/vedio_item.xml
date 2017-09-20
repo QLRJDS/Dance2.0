@@ -4,14 +4,26 @@
     android:layout_height="match_parent"
     android:weightSum="1">
     <!--播放视频的页面-->
-
-    <VideoView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="235dp"
-        android:id="@+id/videoView"
-        android:layout_gravity="center_horizontal"
-        />
-
+        android:layout_height="235dp">
+        <VideoView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/videoView"
+            android:layout_gravity="center_horizontal"
+            />
+        <ImageButton
+            android:id="@+id/xuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/change"
+            android:background="@android:color/transparent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
@@ -30,7 +42,7 @@
             android:textSize="14dp"
             android:paddingLeft="20dp"
             android:id="@+id/vedio_type"/>
-            />
+        />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -58,5 +70,11 @@
             android:layout_marginRight="20dp"
             android:background="@mipmap/like"/>
     </LinearLayout>
+    <ListView
+        android:id="@+id/other_vedio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#ffffff"
+        android:fadingEdge="vertical"/>
 
 </LinearLayout>

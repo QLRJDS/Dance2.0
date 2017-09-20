@@ -9,16 +9,18 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 /**
- * 动态添加视频listview
+ * 动态添加视频listview 对应vedios.xml
  */
 public class VedioListActivity extends Activity implements View.OnClickListener{
 
     private Button back;
+    private TextView title;
     private List<VedioData> mData;
     private VedioAdapter mAdapter;
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,14 @@ public class VedioListActivity extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vedios);
 
-        back=(Button)findViewById(R.id.back);//listview
+        title=(TextView)findViewById(R.id.title);
+
+        //接收传过来的数据，，，设置标题栏
+        Intent intent=getIntent();
+        String title_name=intent.getStringExtra("title");
+        title.setText(title_name);
+
+        back=(Button)findViewById(R.id.back);
         back.setOnClickListener(this);
 
         ListView mListView=(ListView)findViewById(R.id.vedio_list);//listview

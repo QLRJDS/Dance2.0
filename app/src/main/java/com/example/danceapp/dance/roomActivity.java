@@ -60,13 +60,13 @@ public class roomActivity extends Activity
                     mBuilder.append(Integer.toString(c.get(Calendar.HOUR_OF_DAY)) + ":");
                     mBuilder.append(Integer.toString(c.get(Calendar.MINUTE)));
                     //构造时间消息
-                    ChatMessage Message = new ChatMessage(ChatMessage.MessageType_Time, mBuilder.toString());
+                    ChatMessage Message = new ChatMessage(ChatMessage.MessageType_Time, mBuilder.toString(),"time1");
                     mData.add(Message);
                     //构造输入消息
-                    Message = new ChatMessage(ChatMessage.MessageType_To, InputBox.getText().toString());
+                    Message = new ChatMessage(ChatMessage.MessageType_To, InputBox.getText().toString(),"time2");
                     mData.add(Message);
                     //构造返回消息，如果这里加入网络的功能，那么这里将变成一个网络机器人
-                    Message = new ChatMessage(ChatMessage.MessageType_From, "收到！");
+                    Message = new ChatMessage(ChatMessage.MessageType_From, "收到！","机器人");
                     mData.add(Message);
                     //更新数据
                     mAdapter.Refresh();
@@ -130,22 +130,22 @@ public class roomActivity extends Activity
     {
         List<ChatMessage> Messages=new ArrayList<ChatMessage>();
 
-        ChatMessage Message=new ChatMessage(ChatMessage.MessageType_Time,"2017年8月8日");
+        ChatMessage Message=new ChatMessage(ChatMessage.MessageType_Time,"2017年8月8日","shijian");
         Messages.add(Message);
 
-        Message=new ChatMessage(ChatMessage.MessageType_From,"山重水复疑无路");
+        Message=new ChatMessage(ChatMessage.MessageType_From,"山重水复疑无路","小李");
         Messages.add(Message);
 
-        Message=new ChatMessage(ChatMessage.MessageType_To,"柳暗花明又一村");
+        Message=new ChatMessage(ChatMessage.MessageType_To,"柳暗花明又一村","xiaoliu");
         Messages.add(Message);
 
-        Message=new ChatMessage(ChatMessage.MessageType_From,"青青子衿，悠悠我心");
+        Message=new ChatMessage(ChatMessage.MessageType_From,"青青子衿，悠悠我心","xiaobing");
         Messages.add(Message);
 
-        Message=new ChatMessage(ChatMessage.MessageType_To,"但为君故，沉吟至今");
+        Message=new ChatMessage(ChatMessage.MessageType_To,"但为君故，沉吟至今","wo");
         Messages.add(Message);
 
-        Message=new ChatMessage(ChatMessage.MessageType_Time,"19：25");
+        Message=new ChatMessage(ChatMessage.MessageType_Time,"19：25","");
         Messages.add(Message);
 
         Message=new ChatMessage(ChatMessage.MessageType_From,"这是你做的Android程序吗？");

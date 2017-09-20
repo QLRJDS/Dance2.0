@@ -49,7 +49,7 @@ public class ChatAdapter extends BaseAdapter
     @Override
     public View getView(int Index, View mView, ViewGroup mParent)
     {
-        TextView Content;
+        TextView Content,Name;
         switch(mData.get(Index).getType())
         {
             //时间类型
@@ -57,18 +57,27 @@ public class ChatAdapter extends BaseAdapter
                 mView= LayoutInflater.from(mContext).inflate(R.layout.text_time, null);
                 Content=(TextView)mView.findViewById(R.id.Time);
                 Content.setText(mData.get(Index).getContent());
+
                 break;
             //接受的消息
             case ChatMessage.MessageType_From:
                 mView=LayoutInflater.from(mContext).inflate(R.layout.text_receive, null);
-                Content=(TextView)mView.findViewById(R.id.From_Content);
+
+                Content=(TextView)mView.findViewById(R.id.From_Content);//设置消息
                 Content.setText(mData.get(Index).getContent());
+
+                Name=(TextView)mView.findViewById(R.id.from_name);//设置姓名
+                Name.setText(mData.get(Index).getName());
                 break;
             //发送的消息
             case ChatMessage.MessageType_To:
                 mView=LayoutInflater.from(mContext).inflate(R.layout.text_send, null);
-                Content=(TextView)mView.findViewById(R.id.To_Content);
+
+                Content=(TextView)mView.findViewById(R.id.To_Content);//设置消息
                 Content.setText(mData.get(Index).getContent());
+
+                Name=(TextView)mView.findViewById(R.id.my_name);//设置姓名
+                Name.setText(mData.get(Index).getName());
                 break;
         }
         return mView;

@@ -116,45 +116,35 @@
             android:textSize="18dp"
             android:layout_marginLeft="10dp"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <RadioGroup
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="5dp">
-            <Button
-                android:id="@+id/decrease"
-                android:layout_height="25dp"
-                android:layout_width="25dp"
-                android:background="@drawable/add_button"
-                android:layout_below="@+id/room_time"
-                android:text="-"
-                android:textColor="@color/colorPrimary"
-                />
-            <EditText
-                android:id="@+id/time"
-                android:layout_width="wrap_content"
+            <RadioButton
+                android:id="@+id/time1"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="1"
+                android:layout_width="wrap_content"
+                android:text="1小时"
                 android:textSize="16dp"
                 />
-            <TextView
+            <RadioButton
+                android:id="@+id/time2"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="小时"
-                android:textSize="16dp"/>
-            <Button
-                android:id="@+id/add"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/add_button"
-                android:text="+"
-                android:textColor="@color/colorPrimary" />
-        </LinearLayout>
-
+                android:text="2小时"
+                android:textSize="16dp"
+                />
+            <RadioButton
+                android:id="@+id/time3"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="3小时"
+                android:textSize="16dp"
+                />
+        </RadioGroup>
         <Button
             android:id="@+id/newroom"
             android:layout_width="match_parent"

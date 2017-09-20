@@ -14,7 +14,7 @@ import android.widget.Toast;
  * 音乐播放页面  音乐进度的控制
  */
 public class MusicActivity extends Activity implements View.OnClickListener{
-    private Button back_to_room,last,next;
+    private Button back,last,next;
     private ChangeButton music_control_btn;//音乐播放暂停按钮;
     private SeekBar seekbar;
     private RelativeLayout music_list_bar;
@@ -50,8 +50,8 @@ public class MusicActivity extends Activity implements View.OnClickListener{
     }
     private void initView()//初始化控件
     {
-        back_to_room= (Button) findViewById(R.id.back_to_room);
-        back_to_room.setOnClickListener(this);
+        back= (Button) findViewById(R.id.back);
+        back.setOnClickListener(this);
 
         music_control_btn = (ChangeButton) findViewById(R.id.music_control_btn);
         music_control_btn.setOnClickListener(this) ;
@@ -70,7 +70,7 @@ public class MusicActivity extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.back_to_room://返回上一页
+            case R.id.back://返回上一页
                 finish();
                 break;
             case R.id.music_list_bar://点击播放列表跳转到播放列表页面

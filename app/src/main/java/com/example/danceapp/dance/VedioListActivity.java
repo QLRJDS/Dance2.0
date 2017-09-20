@@ -16,15 +16,18 @@ import java.util.List;
 /**
  * 动态添加视频listview
  */
-public class VedioListActivity extends Activity{
+public class VedioListActivity extends Activity implements View.OnClickListener{
 
-    private Button back_to_home;
+    private Button back;
     private List<VedioData> mData;
     private VedioAdapter mAdapter;
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vedios);
+
+        back=(Button)findViewById(R.id.back);//listview
+        back.setOnClickListener(this);
 
         ListView mListView=(ListView)findViewById(R.id.vedio_list);//listview
         mData=LoadData();//测试数据
@@ -47,6 +50,13 @@ public class VedioListActivity extends Activity{
                 Toast.LENGTH_SHORT).show();
 
         mListView.smoothScrollToPositionFromTop(mData.size(), 0);
+    }
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.back://返回上一页
+                finish();
+                break;
+        }
     }
 
     //测试数据

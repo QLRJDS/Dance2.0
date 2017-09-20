@@ -12,9 +12,9 @@
         android:background="@color/colorPrimary"
         android:padding="10dp">
         <Button
-            android:id="@+id/back_to_room"
-            android:layout_height="30dp"
-            android:layout_width="30dp"
+            android:id="@+id/back"
+            android:layout_height="20dp"
+            android:layout_width="20dp"
             android:background="@mipmap/back"
             android:layout_centerVertical="true"
             />
@@ -22,7 +22,7 @@
             android:id="@+id/textView"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="房间1234"
+            android:text="房间"
             android:textColor="@color/colorWhite"
             android:textSize="18dp"
             android:layout_centerInParent="true" />

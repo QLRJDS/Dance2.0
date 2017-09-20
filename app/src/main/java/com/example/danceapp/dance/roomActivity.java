@@ -28,7 +28,7 @@ public class roomActivity extends Activity
     private RelativeLayout music_bar;
     private ChangeButton music_control_btn;//音乐播放暂停按钮
     //聊天
-    private Button BtnSend,last,next;//发送，上一首、下一首
+    private Button BtnSend,last,next,back;//发送，上一首、下一首
     private EditText InputBox;
     private List<ChatMessage> mData;
     private ChatAdapter mAdapter;
@@ -96,11 +96,17 @@ public class roomActivity extends Activity
 
         next = (Button) findViewById(R.id.next);
         next.setOnClickListener(this) ;
+
+        back = (Button) findViewById(R.id.back);
+        back.setOnClickListener(this) ;
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.back://返回上一页
+                finish();
+                break;
             case R.id.music_bar://点击顶部音乐条跳转到音乐页面
                 Intent intent = new Intent(roomActivity.this, MusicActivity.class);
                 roomActivity.this.startActivity(intent);

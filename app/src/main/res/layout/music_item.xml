@@ -12,7 +12,7 @@
         android:background="@color/colorPrimary"
         android:padding="10dp">
         <Button
-            android:id="@+id/back_to_room"
+            android:id="@+id/back"
             android:layout_height="20dp"
             android:layout_width="20dp"
             android:background="@mipmap/back"

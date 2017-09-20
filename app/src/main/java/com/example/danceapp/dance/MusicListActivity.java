@@ -20,7 +20,7 @@ import java.util.List;
  * Created by Jinya LIANG on 2017/8/9.
  */
 public class MusicListActivity extends Activity implements View.OnClickListener{
-    private Button back_to_room,add_song,delete_btn;
+    private Button back,add_song,delete_btn;
     private List<MusicData> mData;
     private MusicAdapter mAdapter;
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,14 +49,14 @@ public class MusicListActivity extends Activity implements View.OnClickListener{
     }
     private void initView()
     {
-        back_to_room= (Button) findViewById(R.id.back_to_room);
-        back_to_room.setOnClickListener(this);
+        back= (Button) findViewById(R.id.back);
+        back.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.back_to_room:
+            case R.id.back:
                 finish();
                 break;
         }
@@ -66,7 +66,7 @@ public class MusicListActivity extends Activity implements View.OnClickListener{
     private List<MusicData> LoadData() {
         List<MusicData> datas = new ArrayList<MusicData>();
 
-        MusicData data = new MusicData("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505792787888&di=c67252f22deb9cdacdb19095ec1e4f0c&imgtype=0&src=http%3A%2F%2Fi54.photobucket.com%2Falbums%2Fg85%2Fthslang%2F15.jpg","111111111111111");
+        MusicData data = new MusicData("om%2Falbums%2Fg85%2","111111111111111");
         datas.add(data);
         data = new MusicData("bbbbbbbbbbbb","2222222222222");
         datas.add(data);

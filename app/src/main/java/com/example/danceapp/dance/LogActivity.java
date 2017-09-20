@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created by Jinya LIANG on 2017/9/17.
@@ -13,7 +14,7 @@ import android.widget.Button;
 public class LogActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button login,register;
-
+    Intent intent;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mine_login);
@@ -35,8 +36,14 @@ public class LogActivity extends AppCompatActivity implements View.OnClickListen
                 finish();
                 break;*/
             case R.id.register_bt://注册
-                Intent intent = new Intent(LogActivity.this, RegisterActivity.class);
+                intent = new Intent(LogActivity.this, RegisterActivity.class);
                 LogActivity.this.startActivity(intent);
+                break;
+            case R.id.login_bt://登陆
+                //判断登陆
+
+                //登陆成功则执行
+                finish();
                 break;
         }
     }

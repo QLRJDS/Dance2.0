@@ -29,7 +29,6 @@ public class VedioListActivity extends Activity implements View.OnClickListener{
         setContentView(R.layout.vedios);
 
         title=(TextView)findViewById(R.id.title);
-
         //接收传过来的数据，，，设置标题栏
         Intent intent=getIntent();
         String title_name=intent.getStringExtra("title");
@@ -42,21 +41,16 @@ public class VedioListActivity extends Activity implements View.OnClickListener{
         mData=LoadData();//测试数据
         mAdapter=new VedioAdapter(this, mData);
         mListView.setAdapter(mAdapter);
-        Toast.makeText(getApplicationContext(), "set了",
-                Toast.LENGTH_SHORT).show();
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                Toast.makeText(getApplicationContext(), "默认Toast样式",
+                Toast.makeText(getApplicationContext(), "点击",
                         Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(VedioListActivity.this, vedioActivity.class);
+                Intent intent = new Intent(VedioListActivity.this, HeadActivity.class);
                 startActivity(intent);
             }
         });
-
-        Toast.makeText(getApplicationContext(), "话了",
-                Toast.LENGTH_SHORT).show();
 
         mListView.smoothScrollToPositionFromTop(mData.size(), 0);
     }
@@ -83,16 +77,6 @@ public class VedioListActivity extends Activity implements View.OnClickListener{
         data = new VedioData("http://image2.sina.com.cn/blog/tmpl/v3/images/error_link.gif","视频名称");
         datas.add(data);
         data = new VedioData("http://hiphotos.baidu.com/baidu/pic/item/7d8aebfebf3f9e125c6008d8.jpg","视频名称");
-        datas.add(data);
-        data = new VedioData("http://image2.sina.com.cn/blog/tmpl/v3/images/error_link.gif","视频名称");
-        datas.add(data);
-        data = new VedioData("http://image2.sina.com.cn/blog/tmpl/v3/images/error_link.gif","视频名称");
-        datas.add(data);
-        data = new VedioData("http://image2.sina.com.cn/blog/tmpl/v3/images/error_link.gif","视频名称");
-        datas.add(data);
-        data = new VedioData("http://image2.sina.com.cn/blog/tmpl/v3/images/error_link.gif","视频名称");
-        datas.add(data);
-        data = new VedioData("http://image2.sina.com.cn/blog/tmpl/v3/images/error_link.gif","视频名称");
         datas.add(data);
 
         return datas;

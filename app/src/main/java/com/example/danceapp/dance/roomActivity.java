@@ -16,7 +16,26 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
+import android.Manifest;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 /**
  * Created by Jinya LIANG on 2017/8/6.
  */
@@ -32,6 +51,26 @@ public class roomActivity extends Activity
     private EditText InputBox;
     private List<ChatMessage> mData;
     private ChatAdapter mAdapter;
+
+    private String title="无音乐";
+
+    private String artist="佚名";
+
+    private int musicPosition=-1;
+
+    private Boolean isPause;
+
+    private Boolean isPlaying;
+
+
+    List<Mp3> mp3Infos = null;
+
+
+
+    private boolean isOwner=true;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,56 +120,136 @@ public class roomActivity extends Activity
         });
 
         initView();
+
+        //modified below.
+
+        mp3Infos=MediaUtil.getMp3(getApplicationContext());
+        if(isOwner){
+            setOnClickListener();
+        }
+
+        Intent intent=getIntent();
+        if(intent!=null){
+            title=intent.getStringExtra("title");
+            artist=intent.getStringExtra("artist");
+            musicPosition=intent.getIntExtra("musicPosition",-1);
+        }
+        music_name.setText(title);
+
+        if(ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);    //运行时权限申请，申请访问SD卡的权限
+        } else {
+//            Toast.makeText(this, "onCreate..", Toast.LENGTH_SHORT).show();
+//            initMediaPlayer();  //初始化播放器
+        }
     }
 
     private void initView(){
 
         music_bar=(RelativeLayout)findViewById(R.id.music_bar);
-        music_bar.setOnClickListener(this);
 
         music_control_btn = (ChangeButton) findViewById(R.id.music_control_btn);
-        music_control_btn.setOnClickListener(this) ;
 
         last =(Button)findViewById(R.id.last);
-        last.setOnClickListener(this) ;
 
         next = (Button) findViewById(R.id.next);
-        next.setOnClickListener(this) ;
 
         back = (Button) findViewById(R.id.back);
+
+        music_name =(TextView)findViewById(R.id.music_name);
+    }
+
+    private void setOnClickListener(){
+        music_bar.setOnClickListener(this);
+        music_control_btn.setOnClickListener(this) ;
+        last.setOnClickListener(this) ;
+        next.setOnClickListener(this) ;
+
         back.setOnClickListener(this) ;
+
     }
 
     @Override
-    public void onClick(View v) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+            case 1:
+                if (grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                    Toast.makeText(this, "onRequestPermissionsResult..", Toast.LENGTH_SHORT).show();
+//                    initMediaPlayer();
+                } else {
+                    Toast.makeText(this, "拒绝权限无法使用程序", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                break;
+            default:
+        }
+    }
+
+    @Override
+    public void onClick(View v){
+        Intent intent=new Intent(this,MusicService.class);
         switch (v.getId()) {
-            case R.id.back://返回上一页
-                finish();
+
+            case R.id.music_control_btn:
+                if(musicPosition==-1){
+                    Toast.makeText(this,"请先选择音乐",Toast.LENGTH_SHORT).show();
+                } else if(isPause) {
+                    //更改图标语句，下同
+                    intent.putExtra("musicPosition",musicPosition);
+                    intent.putExtra("MSG",Constant.PLAY_MSG);
+                    startService(intent);
+                    isPause=false;
+                    isPlaying=true;
+                } else if(isPlaying) {
+                    intent.putExtra("url",mp3Infos.get(musicPosition).getUrl());
+                    intent.putExtra("musicPosition",musicPosition);
+                    intent.putExtra("MSG",Constant.PAUSE_MSG);
+                    startService(intent);
+                    isPause=true;
+                    isPlaying=false;
+                }
                 break;
-            case R.id.music_bar://点击顶部音乐条跳转到音乐页面
-                Intent intent = new Intent(roomActivity.this, MusicActivity.class);
-                roomActivity.this.startActivity(intent);
-                break;
-            case R.id.music_control_btn://点击开始暂停控制音乐播放
-                music_control_btn.setIsStart(!music_control_btn.isStart());
-                if(music_control_btn.isStart())
-                    Toast.makeText(getApplicationContext(), "开始播放",//测试数据
-                            Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(getApplicationContext(), "暂停播放",
-                            Toast.LENGTH_SHORT).show();
             case R.id.last:
-                //上一首
-                Toast.makeText(getApplicationContext(), "上一首",//测试数据
-                        Toast.LENGTH_SHORT).show();
+                if(musicPosition==-1) {
+                    Toast.makeText(this, "请先选择音乐", Toast.LENGTH_SHORT).show();
+                } else {
+                    musicPosition=musicPosition-1;
+                    intent.putExtra("url",mp3Infos.get(musicPosition).getUrl());
+                    intent.putExtra("musicPosition",musicPosition);
+                    intent.putExtra("MSG",Constant.PREVIOUS_MSG);
+                    startService(intent);
+                    isPause=false;
+                    isPlaying=true;
+                }
                 break;
             case R.id.next:
-                //下一首
-                Toast.makeText(getApplicationContext(), "下一首",//测试数据
-                        Toast.LENGTH_SHORT).show();
+                if(musicPosition==-1) {
+                    Toast.makeText(this, "请先选择音乐", Toast.LENGTH_SHORT).show();
+                } else {
+                    musicPosition=musicPosition+1;
+                    intent.putExtra("url",mp3Infos.get(musicPosition).getUrl());
+                    intent.putExtra("musicPosition",musicPosition);
+                    intent.putExtra("MSG",Constant.NEXT_MSG);
+                    startService(intent);
+                    isPause=false;
+                    isPlaying=true;
+                }
+                break;
+
+            case R.id.music_bar:
+                Intent intent2 = new Intent(this,MusicActivity.class);
+                intent2.putExtra("title",title);
+                intent2.putExtra("artist",artist);
+                intent2.putExtra("musicPosition",musicPosition);
+                startActivity(intent2);
+
+            default:
                 break;
         }
     }
+
     //测试数据
     private List<ChatMessage> LoadData()
     {
@@ -179,5 +298,6 @@ public class roomActivity extends Activity
         Messages.add(Message);
         return Messages;
     }
+
 }
 

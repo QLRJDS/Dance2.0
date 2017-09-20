@@ -87,7 +87,7 @@ public class homePageFragment extends Fragment implements View.OnClickListener{
             //!!!!!!!!!!!!!!!!
             case R.id.vptuijian:
                 intent = new Intent(getActivity(), vedioActivity.class);
-                intent.putExtra("vedio_url", "");
+                intent.putExtra("vedio_url", "E:\\xampp\\htdocs\\video");
                 intent.putExtra("vedio_name","视频名称");
                 intent.putExtra("vedio_class","视频分类");
                 startActivity(intent);

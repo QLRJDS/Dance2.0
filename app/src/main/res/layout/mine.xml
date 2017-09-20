@@ -17,6 +17,13 @@ android:layout_height="match_parent">
         android:background="@drawable/bg_border"
         android:src="@drawable/boy"
         android:padding="3dp" />
+    <TextView
+        android:id="@+id/user"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

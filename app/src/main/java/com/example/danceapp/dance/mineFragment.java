@@ -1,5 +1,6 @@
 package com.example.danceapp.dance;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -66,5 +67,11 @@ public class mineFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    public void onAttach(Activity activity)
+    {
+        super.onAttach(activity);
+
     }
 }

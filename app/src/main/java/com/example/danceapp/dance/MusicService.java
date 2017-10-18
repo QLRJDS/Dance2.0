@@ -135,7 +135,6 @@ public class MusicService extends Service {
         play();
     }
 
-
     private void next() {
 //        Intent sendIntent = new Intent(UPDATE_ACTION);
 //        sendIntent.putExtra("current", current);
@@ -152,7 +151,4 @@ public class MusicService extends Service {
             mediaPlayer = null;
         }
     }
-
-
-
 }

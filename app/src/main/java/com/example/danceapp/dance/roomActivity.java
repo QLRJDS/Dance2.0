@@ -1,21 +1,5 @@
 package com.example.danceapp.dance;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
@@ -23,12 +7,10 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -36,6 +18,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+
 /**
  * Created by Jinya LIANG on 2017/8/6.
  */
@@ -53,24 +36,15 @@ public class roomActivity extends Activity
     private ChatAdapter mAdapter;
 
     private String title="无音乐";
-
     private String artist="佚名";
-
     private int musicPosition=-1;
-
     private Boolean isPause;
-
     private Boolean isPlaying;
-
 
     List<Mp3> mp3Infos = null;
 
 
-
-    private boolean isOwner=true;
-
-
-
+    private boolean isOwner=true;//从前面按钮中传递过来的信息，决定是不是房主。
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -298,6 +272,4 @@ public class roomActivity extends Activity
         Messages.add(Message);
         return Messages;
     }
-
 }
-

@@ -43,9 +43,9 @@ public class vedioActivity extends Activity implements View.OnClickListener {
         vedio_name_tv= (TextView) findViewById(R.id.vedio_name);
         vedio_name_tv.setText(vedio_name);
 
-        String vedio=intent.getStringExtra("vedio_url");//接收视频url
+        String vedio=intent.getStringExtra("vedio_class");//接收视频url
         mVideoView01 = (VideoView) findViewById(R.id.videoView);//设置视频
-        mVideoView01.setVideoURI(Uri.parse(vedio));
+        mVideoView01.setVideoURI(Uri.parse("http://www.huaishuo123.cn:8080/HouTai/video/1.mp4"));
 
         //mVideoView01.setVideoURI(Uri.parse("http://www.huaishuo123.cn:8080/HouTai/video/1.mp4"));
         mediaController = new MediaController(vedioActivity.this);

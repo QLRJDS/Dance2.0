@@ -30,15 +30,15 @@ import java.io.FileInputStream;
 import java.util.HashMap;
 import java.util.List;
 
-import static android.R.attr.bitmap;
+//import static android.R.attr.bitmap;
 //import static com.example.playaudiotest.MusicService.MUSIC_DURATION;
 //import static com.example.playaudiotest.MusicService.UPDATE_ACTION;
-import static com.example.playaudiotest.R.id.imageView_next;
-import static com.example.playaudiotest.R.id.imageView_play;
-import static com.example.playaudiotest.R.id.imageView_previous;
-import static com.example.playaudiotest.R.id.textView_musicName;
-import static com.example.playaudiotest.R.id.textView_title;
-import static com.example.playaudiotest.R.id.title;
+//import static com.example.playaudiotest.R.id.imageView_next;
+//import static com.example.playaudiotest.R.id.imageView_play;
+//import static com.example.playaudiotest.R.id.imageView_previous;
+//import static com.example.playaudiotest.R.id.textView_musicName;
+//import static com.example.playaudiotest.R.id.textView_title;
+//import static com.example.playaudiotest.R.id.title;
 
 public class MusicActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
@@ -78,8 +78,7 @@ public class MusicActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.music_item);
-
+        setContentView(R.layout.activity_music);
 
         mp3Infos = MediaUtil.getMp3(getApplicationContext());   //  MP3类的列表，存放具体的音乐文件对象信息
         mp3List = MediaUtil.getMusicMaps(mp3Infos);             //  哈希对类型的列表
@@ -108,8 +107,6 @@ public class MusicActivity extends AppCompatActivity implements View.OnClickList
         marqueeTextView_musicTitle.setText(title);
         marqueeTextView_musicArtist.setText(artist);
 
-
-
         if (ContextCompat.checkSelfPermission(MusicActivity.this,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(MusicActivity.this,
@@ -117,8 +114,6 @@ public class MusicActivity extends AppCompatActivity implements View.OnClickList
         } else {
 //            Toast.makeText(this, "onCreate..", Toast.LENGTH_SHORT).show();
         }
-
-
     }
 
     // 自定义的BroadcastReceiver，负责监听从Service传回来的广播，分别对oncreate中注册的两个action进行处理。
@@ -154,7 +149,7 @@ public class MusicActivity extends AppCompatActivity implements View.OnClickList
         imageView_previous=(ImageView)findViewById(R.id.imageView_previous);
         marqueeTextView_musicTitle = (MarqueeTextView) findViewById(R.id.music_title);
         marqueeTextView_musicArtist = (MarqueeTextView) findViewById(R.id.music_artist);
-        //button_back=(Button)findViewById(R.id.button_back);
+        button_back=(Button)findViewById(R.id.button_back);
     }
 
     private void setOnClickListener(){
@@ -273,7 +268,7 @@ public class MusicActivity extends AppCompatActivity implements View.OnClickList
                 previous();
                 break;
             case R.id.button_back:
-                Intent intent2=new Intent(this,MainActivity.class);
+                Intent intent2=new Intent(this,roomActivity.class);
                 intent2.putExtra("title",title);
                 intent2.putExtra("artist",artist);
                 intent2.putExtra("musicPosition",musicPosition);
@@ -382,16 +377,11 @@ public class MusicActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
+        @Override
+    protected void onDestroy(){
+        super.onDestroy();
 
-
-    //    @Override
-//    protected void onDestroy(){
-//        super.onDestroy();
-//        if (mediaPlayer != null){
-//            mediaPlayer.stop();
-//            mediaPlayer.release();
-//        }
-//    }
+    }
 
 
 }
